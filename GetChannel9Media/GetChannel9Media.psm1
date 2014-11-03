@@ -1,36 +1,4 @@
 ﻿
-# Test for how script was loaded to allow warning if loaded directly rather than
-# via import-module
-if ($MyInvocation.InvocationName -eq ‘&‘) {
-    #write-host “Called using operator“
-} 
-    elseif ($MyInvocation.InvocationName -eq ‘.‘) {
-    #write-host “Dot sourced“
-    } 
-    elseif ((Resolve-Path -Path $MyInvocation.InvocationName).ProviderPath -eq $MyInvocation.MyCommand.Path) {
-    write-host “ Script Called using path $($MyInvocation.InvocationName)“
-    $calledusingpath = $true
-}
-
-IF ($calledusingpath)
-{
-Write-Host ' '
-Write-Host ' '
-Write-Host ' '
-Write-Host ' Hi'
-Write-Host ' '
-Write-Host " It looks like you've tried to run this as a script but it's actually a module (a package of scripts)"
-write-Host ' '
-write-Host " Don't panic, just Run Import-Module followed by the folder path to the module.psm1 file"
-write-Host ' '
-write-host ' e.g. Import-Module c:\mydownloads\GetChannel9MediaPSModule\GetChannel9MediaPSModule.psm1'
-write-host ' '
-write-Host ' One the module is loaded you can use the cmdlet in the normal way'
-write-host ' '
-write-host ' For Example, Get-Channel9Media -SessionCSV .\InputCSV.csv -DownloadTargetDirectory C:\Downloads'
-Write-Host ' '
-}
-
 
 function Get-Channel9Media {
 <#  
@@ -86,7 +54,7 @@ Write-host ' '
 Write-host ' '
 Write-Host '###############################################################################################'  -ForegroundColor Yellow
 Write-Host '                                                                                               '  -ForegroundColor Yellow
-Write-Host '                    Get-Channel9Media by Tom Arbuthnot http://lyncdup.com                      '  -ForegroundColor Green
+Write-Host '                    Get-Channel9Media by Tom Arbuthnot http://tomtalks.uk                      '  -ForegroundColor Green
 Write-Host '                                                                                               '  -ForegroundColor Yellow
 Write-Host '            Credit: Original 2012 downloader by http://blog.scomfaq.ch (c) 2012 Stefan Roth    '  -ForegroundColor Green
 Write-Host '                                                                                               '  -ForegroundColor Yellow
