@@ -10,7 +10,7 @@ function Get-Channel9Media {
     CSV format Code,Name, Where Code is session code and Name is the name you want to call the download file.
 
 .NOTES  
-    Modified for Channel9 Downloads NA by Tom Arbuthnot lyncdup.com
+    Modified for Channel9 Downloads NA by Tom Arbuthnot tomtalks.uk
     Original provided by blog.SCOMfaq.ch / Stefan Roth
     credit http://blog.scomfaq.ch/2012/06/13/teched-2012-orlando-download-sessions-offline-viewing/
     Credit: Pat Richard for New-Download Function http://www.ehloworld.com
